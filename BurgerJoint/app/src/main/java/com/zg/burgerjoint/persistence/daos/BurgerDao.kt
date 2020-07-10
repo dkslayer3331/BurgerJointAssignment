@@ -6,8 +6,6 @@ import com.zg.burgerjoint.data.vos.BurgerVO
 
 @Dao
 interface BurgerDao {
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertBurgers(burgers : List<BurgerVO>)
 
     @Query("SELECT * FROM burgers")
     fun getAllBurgers() : LiveData<List<BurgerVO>>
@@ -17,4 +15,10 @@ interface BurgerDao {
 
     @Query("DELETE FROM burgers")
     fun deleteAllBurgers()
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertBurgers(burgers : List<BurgerVO>)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insert(burger : BurgerVO)
 }

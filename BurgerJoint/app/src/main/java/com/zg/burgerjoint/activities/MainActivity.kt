@@ -63,7 +63,7 @@ class MainActivity : BaseActivity(), MainView {
         rvBurgerList.layoutManager = GridLayoutManager(applicationContext, 1)
     }
 
-    override fun navigateToBurgerDetailsScreenWithAnimation(burgerId: Int, burgerImageView: ImageView) {
+    override fun navigateToBurgerDetailsScreen(burgerId: Int, burgerImageView: ImageView) {
         val imagePair = Pair.create(burgerImageView as View, "tBurgerImage")
         val options = ActivityOptionsCompat.makeSceneTransitionAnimation(this,imagePair)
         ActivityCompat.startActivity(this,BurgerDetailsActivity.newIntent(this,burgerId),options.toBundle())
@@ -82,7 +82,7 @@ class MainActivity : BaseActivity(), MainView {
         tvCartCount.text = burgersInCartCount.toString()
     }
 
-    override fun animateAddBurgerToCart(burger: BurgerVO, burgerImageView: ImageView) {
+    override fun addBurgerToCart(burger: BurgerVO, burgerImageView: ImageView) {
         //Play Animation
         val burgerPosition = getPositionOf(burgerImageView)
         val cartPosition = getPositionOf(ivCart)
