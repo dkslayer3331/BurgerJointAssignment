@@ -1,4 +1,3 @@
-package com.zg.burgerjoint.`ui-test`.utils
 
 /**
  * Created by Moe Htet on 11,July,2020

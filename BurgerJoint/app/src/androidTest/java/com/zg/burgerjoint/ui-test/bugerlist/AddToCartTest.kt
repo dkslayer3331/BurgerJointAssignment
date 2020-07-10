@@ -1,4 +1,3 @@
-package com.zg.burgerjoint.`ui-test`.bugerlist
 
 /**
  * Created by Moe Htet on 11,July,2020
@@ -14,7 +13,6 @@ import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import androidx.test.rule.ActivityTestRule
 import com.zg.burgerjoint.R
-import com.zg.burgerjoint.`ui-test`.utils.first
 import com.zg.burgerjoint.activities.MainActivity
 import com.zg.burgerjoint.viewholders.BurgerViewHolder
 import org.junit.Before

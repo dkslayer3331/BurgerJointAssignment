@@ -1,4 +1,4 @@
-package com.zg.burgerjoint.`ui-test`.login
+
 
 /**
  * Created by Moe Htet on 11,July,2020
