@@ -1,8 +1,5 @@
-package com.zg.burgerjoint
+package com.zg.burgerjoint.mvp.presenters.impls
 
-/**
- * Created by Moe Htet on 11,July,2020
- */
 import android.widget.ImageView
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
@@ -14,7 +11,6 @@ import com.zg.burgerjoint.data.model.impls.BurgerModelImpl
 import com.zg.burgerjoint.data.model.impls.MockBurgerModelImpl
 import com.zg.burgerjoint.data.vos.BurgerVO
 import com.zg.burgerjoint.dummy.getDummyBurgers
-import com.zg.burgerjoint.mvp.presenters.impls.MainPresenterImpl
 import com.zg.burgerjoint.mvp.views.MainView
 import io.mockk.MockKAnnotations
 import io.mockk.impl.annotations.RelaxedMockK
