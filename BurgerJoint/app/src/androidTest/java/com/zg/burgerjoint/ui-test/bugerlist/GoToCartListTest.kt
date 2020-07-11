@@ -1,4 +1,3 @@
-
 /**
  * Created by Moe Htet on 11,July,2020
  */
@@ -19,7 +18,7 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4ClassRunner::class)
 class GoToCartListTest {
 
-    private val activityTestRule = ActivityTestRule<MainActivity>(MainActivity::class.java)
+    private val activityTestRule = ActivityTestRule(MainActivity::class.java)
 
     @Before
     open fun setUp() {

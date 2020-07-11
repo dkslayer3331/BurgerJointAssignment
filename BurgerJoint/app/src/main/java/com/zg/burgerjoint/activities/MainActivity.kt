@@ -97,8 +97,8 @@ class MainActivity : BaseActivity(), MainView {
 
     override fun navigateToCartScreen() {
         startActivity(
-            CartActivity.newIntent(this),
-            ActivityOptionsCompat.makeSceneTransitionAnimation(this).toBundle()
+            CartActivity.newIntent(this)
+           // ActivityOptionsCompat.makeSceneTransitionAnimation(this).toBundle()
         )
     }
 

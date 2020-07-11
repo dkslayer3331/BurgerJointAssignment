@@ -1,23 +1,24 @@
 package com.zg.burgerjoint.activities
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import com.zg.burgerjoint.R
-
 import android.animation.ObjectAnimator
 import android.content.Context
 import android.content.Intent
 import android.graphics.Rect
+import android.os.Bundle
 import android.util.DisplayMetrics
 import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewTreeObserver
 import android.view.animation.AccelerateDecelerateInterpolator
+import androidx.appcompat.app.AppCompatActivity
 import androidx.dynamicanimation.animation.DynamicAnimation
 import androidx.dynamicanimation.animation.FlingAnimation
+import androidx.dynamicanimation.animation.SpringAnimation
+import androidx.dynamicanimation.animation.SpringForce
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
+import com.zg.burgerjoint.R
 import kotlinx.android.synthetic.main.activity_game.*
 
 class GameActivity : AppCompatActivity() {
@@ -31,20 +32,20 @@ class GameActivity : AppCompatActivity() {
     private var xPositionDiff = 0f
     private var yPositionDiff = 0f
 
-//    private val springForce: SpringForce by lazy {
-//        SpringForce(0f).apply {
-//            stiffness = SpringForce.STIFFNESS_HIGH
-//            dampingRatio = SpringForce.DAMPING_RATIO_HIGH_BOUNCY
-//        }
-//    }
-//
-//    private val springAnimationX: SpringAnimation by lazy {
-//        SpringAnimation(ivGameBurger, DynamicAnimation.TRANSLATION_X).setSpring(springForce)
-//    }
-//
-//    private val springAnimationY : SpringAnimation by lazy{
-//        SpringAnimation(ivGameBurger,DynamicAnimation.TRANSLATION_Y).setSpring(springForce)
-//    }
+    private val springForce: SpringForce by lazy {
+        SpringForce(0f).apply {
+            stiffness = SpringForce.STIFFNESS_HIGH
+            dampingRatio = SpringForce.DAMPING_RATIO_HIGH_BOUNCY
+        }
+    }
+
+    private val springAnimationX: SpringAnimation by lazy {
+        SpringAnimation(ivGameBurger, DynamicAnimation.TRANSLATION_X).setSpring(springForce)
+    }
+
+    private val springAnimationY : SpringAnimation by lazy{
+        SpringAnimation(ivGameBurger,DynamicAnimation.TRANSLATION_Y).setSpring(springForce)
+    }
 
     private val burgerGestureListener = object : GestureDetector.SimpleOnGestureListener() {
         override fun onDown(e: MotionEvent?): Boolean {
@@ -159,8 +160,8 @@ class GameActivity : AppCompatActivity() {
         ivGameBurger.setOnTouchListener { view , motionEvent ->
             when(motionEvent.action){
                 MotionEvent.ACTION_DOWN ->{
-//                    springAnimationY.cancel()
-//                    springAnimationX.cancel()
+                    springAnimationY.cancel()
+                    springAnimationX.cancel()
                     xPositionDiff = motionEvent.rawX - view.x
                     yPositionDiff = motionEvent.rawY - view.y
                 }
@@ -169,8 +170,8 @@ class GameActivity : AppCompatActivity() {
                     ivGameBurger.y = motionEvent.rawY - yPositionDiff
                 }
                 MotionEvent.ACTION_UP -> {
-//                    springAnimationX.start()
-//                    springAnimationY.start()
+                    springAnimationX.start()
+                    springAnimationY.start()
                 }
             }
             true
